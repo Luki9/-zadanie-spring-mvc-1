@@ -2,10 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>List</title>
 </head>
 <body>
 
-<h1
+<ul>
+    <li th:each="product: ${lab}"></li>
+    <span th:text=" ${lab}"></span>
+
+</ul>
+
 </body>
+
 </html>
