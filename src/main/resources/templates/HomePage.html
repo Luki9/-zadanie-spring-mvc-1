@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dodawanie produktów</title>
+
 </head>
 <body>
-
+<h1>Dodawanie produktów</h1><br>
+<form action="/lista" method="post" th:object="${newProduct}">
+    <div class="form-group">
+        <label>Nazwa</label>
+        <input type="text" th:field="*{name}" name="product-name" class="form-control" placeholder = "Nazwa" required/>
+    </div>
+    <div class="form-group">
+        <label>Cena</label>
+        <input type="number" th:field="*{price}" step="0.03" min="0" name="product-price" class="form-control" placeholder="0,00 zł" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
 </body>
 </html>
