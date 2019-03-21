@@ -2,6 +2,7 @@ package lc.springmvc1.demo;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 @Controller
 class HomePageController {
 
-    ArrayList<Product> lab = new ArrayList<>();
+   private ArrayList<Product> lab = new ArrayList<>();
 
     public ArrayList<Product> getlab() {
         return lab;
@@ -20,10 +21,13 @@ class HomePageController {
         this.lab = lab;
 
     }
-        @GetMapping(){
 
-        public String homepage(Model model)
+    @GetMapping
+    public String home(Model model){
+        return "HomePage";
 
-        }
 
+    }
 }
+
+
